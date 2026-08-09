@@ -20,10 +20,11 @@ The Foundation v1.0 Core is present and treated as the stable baseline.
 
 ### Governance records
 
-Current Governance records include:
+Current Governance and operational records include:
 
 - `governance/Governance_Backlog.md`
 - `governance/IDEAS_AND_DISCUSSION.md`
+- `governance/PROCESS_CHECK.md`
 - `governance/REPOSITORY_SOURCE_OF_TRUTH.md`
 - `governance/Release_Review_v1.0_Final_Record.md`
 
@@ -40,6 +41,14 @@ The review established a separation between:
 - Release Review as an evidence-producing verification process;
 - Governance Backlog as the queue for observations, proposals, and decisions requiring later action.
 
+## Process Check state
+
+**Process Check:** implemented as a post-v1.0 operational execution-time control and integrated into the active `CANON.md` recovery route.
+
+The mechanism has been exercised against the current repository state. It requires the executor to determine the current stage, stage objective, relevance of the proposed next action, and appropriate classification before generating or executing the next project-related response or action.
+
+Process Check uses repository state as its authoritative context and must not silently substitute conversation memory when repository data is unavailable.
+
 ## Idea and discussion state
 
 The project now preserves the idea/discussion stage in `governance/IDEAS_AND_DISCUSSION.md`.
@@ -50,11 +59,11 @@ The durable lifecycle is:
 
 An idea or discussion entry is not automatically a canonical rule or an approved Governance decision.
 
-## Known open consolidation item
+## Current consolidation state
 
-The repository has established the external Source of Truth model, but the Process Check route and the complete operational documentation structure still require consolidation and verification against the current Governance model.
+The repository recovery route and Process Check integration have been consolidated and verified at the current stage.
 
-This is intentionally recorded as an open state rather than silently treating the architecture as finished.
+The next integrity work may proceed only after executing Process Check against the repository state and confirming that the proposed action remains within the current stage objective.
 
 ## Context recovery
 
@@ -64,4 +73,4 @@ If this snapshot conflicts with a more authoritative Foundation rule or a newer 
 
 ## Last verified state
 
-This record is being established as part of Post-Release Consolidation after Release Review v1.0.
+This record was updated during Post-Release Consolidation after integration and verification of the Process Check route.
