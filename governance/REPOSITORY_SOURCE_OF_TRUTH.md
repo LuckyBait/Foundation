@@ -23,9 +23,13 @@ When an executor starts or resumes work, the executor should recover context fro
 1. `CANON.md`
 2. Foundation Core documents referenced by `CANON.md`
 3. current Project State, when present
-4. `governance/Governance_Backlog.md`
-5. latest Release Review and decision records
-6. only then continue with new work
+4. `governance/PROCESS_CHECK.md`
+5. `governance/Governance_Backlog.md`
+6. `governance/IDEAS_AND_DISCUSSION.md`
+7. latest Release Review and decision records
+8. only then continue with new work
+
+Before any project-related architectural response, Process Check must be executed using the recovered repository context. It is an execution-time gate, not a post-generation review.
 
 The exact files and order may evolve through Governance decisions; the current `CANON.md` remains authoritative for the active reading route.
 
