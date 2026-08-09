@@ -234,3 +234,56 @@ governance/Repository_Study_Read_Set_v0.1.md
 Не рассмотрено.
 
 Требует отдельного Governance Review. Foundation v1.0 не изменяется.
+
+---------------------------------------------------------
+
+GS-00B
+GS-00B — Operational patterns from downstream project practice
+
+Статус:
+Observation / Requires Governance Consideration
+
+Источник:
+Repository Study и сравнительный анализ документационной системы downstream-проекта HVAC Cost Calculator.
+
+Наблюдение:
+
+При анализе зрелой документационной системы downstream-проекта были обнаружены operational patterns, которые могут усиливать уже существующую Governance/Lifecycle модель Foundation, не требуя изменения Foundation v1.0.
+
+Наблюдение ограничено практикой downstream-проекта и не является утверждением, что эти механизмы должны быть приняты Foundation.
+
+Кандидат 1 — Decision Records / ADR:
+
+Downstream-проект использует отдельный индекс архитектурных решений и записи решений как устойчивые артефакты, связывающие решение с его статусом, последствиями и дальнейшей реализацией.
+
+Кандидат 2 — Technical Debt Register:
+
+Downstream-проект использует отдельный реестр технического долга, позволяющий сохранять технические проблемы как самостоятельные управляемые сущности, не смешивая их автоматически с текущими задачами или общим backlog.
+
+Рабочая гипотеза:
+
+Foundation уже содержит Lifecycle, Governance Backlog, Process Check, Project Status и Release Review, но отдельные стандартизированные Decision Records и Technical Debt Register могут сделать переход:
+
+Observation → Decision → Implementation → Verification
+
+более явным и устойчивым между сессиями, исполнителями и проектами.
+
+Ограничение:
+
+Это наблюдение не разрешает немедленное создание новых Foundation-файлов и не означает принятия этих механизмов.
+
+Следующее допустимое действие:
+
+Отдельный Governance Review должен определить:
+
+1. существует ли уже достаточный эквивалент Decision Records в текущей Governance System;
+2. существует ли уже достаточный эквивалент Technical Debt Register;
+3. если эквивалент существует — достаточно ли он формализован;
+4. если не существует — нужен ли отдельный operational artifact и где должен находиться его ownership;
+5. не создадут ли новые артефакты дублирование существующих источников истины.
+
+Статус решения:
+
+Не рассмотрено.
+
+Требует отдельного Governance Review. Foundation v1.0 не изменяется.
