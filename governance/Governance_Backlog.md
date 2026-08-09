@@ -303,42 +303,27 @@ GS-00C
 GS-00C — Formal closure criteria for Repository Architecture Review
 
 Статус:
-Observation / Requires Governance Consideration
+Accepted / Implemented by Governance Review decision
 
 Источник:
 Repository Architecture Review и сопоставление актуальных Governance records.
 
-Наблюдение:
+Решение:
 
-В ходе Repository Architecture Review установлено, что существующие записи определяют необходимость отдельного архитектурного аудита и его основные направления, но не определяют формальные условия, при которых Repository Architecture Review считается завершённым, а также не определяют обязательный durable artifact, фиксирующий его закрытие.
+Governance Review подтвердил необходимость формального closure criterion для Repository Architecture Review.
 
-Выявленная проблема:
+Утверждённый принцип:
 
-Отсутствие явного closure criterion может создавать неоднозначность между:
+Repository Architecture Review не должен получать статус Completed только на основании субъективного утверждения исполнителя или общего утверждения о структурной консолидации.
 
-структурная консолидация выполнена;
-Repository Architecture Review завершён.
+Условия закрытия и обязательный durable artifact зафиксированы в:
 
-Рабочая гипотеза:
+governance/Repository_Architecture_Review_Final_Record.md
 
-Governance System может требовать формального критерия завершения Architecture Review и проверяемого durable record его closure, чтобы состояние процесса не зависело от интерпретации исполнителя или истории конкретной сессии.
-
-Ограничение:
-
-Это наблюдение не устанавливает сам критерий завершения, не создаёт новый обязательный процесс и не разрешает изменение Foundation v1.0.
-
-Следующее допустимое действие:
-
-Отдельный Governance Review должен определить:
-
-1. нужен ли формальный closure criterion для Repository Architecture Review;
-2. какие условия должны считаться достаточными для статуса завершения;
-3. какой durable artifact должен фиксировать результат;
-4. где должен находиться ownership этого состояния;
-5. не дублирует ли предложенный механизм уже существующие Governance records.
+Решение не изменяет Foundation v1.0.
 
 Статус решения:
 
-Не рассмотрено.
+Принято и зафиксировано durable repository record.
 
-Требует отдельного Governance Review. Foundation v1.0 не изменяется.
+---------------------------------------------------------
