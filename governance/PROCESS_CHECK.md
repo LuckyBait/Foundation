@@ -1,67 +1,93 @@
 # Process Check
 
-## Status
+## Статус
 
-Post-v1.0 operational execution rule.
+Операционное правило исполнения после v1.0.
 
-## Purpose
+## Назначение
 
-Process Check is an execution-time control. It is intended to constrain the **next action of the executor before generating an architectural answer**, rather than reviewing an already-generated answer after the fact.
+Process Check — это контроль, выполняемый во время исполнения. Его задача — ограничивать **следующее действие исполнителя до генерации архитектурного ответа**, а не проверять уже созданный ответ постфактум.
 
-It does not replace Foundation, Governance, Project State, or Release Review. It controls how the executor moves between them.
+Process Check не заменяет Foundation, Governance, Project State или Release Review. Он определяет, как исполнитель переходит между ними.
 
-## Mandatory rule
+## Обязательное правило
 
-Before every project-related architectural response, the executor must perform the following short check using only the current repository state available from `main`:
+Перед каждым ответом, связанным с проектом, исполнитель обязан выполнить следующую короткую проверку, используя только актуальное состояние репозитория из `main`:
 
-1. What is the current stage?
-2. What is the goal of that stage?
-3. Does the proposed response belong to that goal?
-4. If not, classify it as:
-   - Governance Backlog / idea or discussion;
-   - a later stage;
-   - reject / out of scope.
-5. Only then generate the response.
+1. Каков текущий этап?
+2. Какова цель этого этапа?
+3. Относится ли предлагаемое действие к цели текущего этапа?
+4. Если нет — классифицировать его как:
+   - Governance Backlog / идея или обсуждение;
+   - более поздний этап;
+   - отклонить / вне области.
+5. Только после этого формировать ответ.
 
-## Boundary rule
+## Граничное правило
 
-If a proposed action falls outside the current stage, the executor must not continue developing it as if it belonged to the current task.
+Если предлагаемое действие выходит за рамки текущего этапа, исполнитель не должен продолжать развивать его так, будто оно относится к текущей задаче.
 
-Instead:
+Вместо этого необходимо:
 
-- record or route the idea to `governance/IDEAS_AND_DISCUSSION.md` when it is still forming;
-- promote it to `governance/Governance_Backlog.md` when it is a sufficiently mature Governance proposal;
-- identify the later stage when the matter belongs there;
-- reject it when it is out of scope.
+- записать или направить идею в `governance/IDEAS_AND_DISCUSSION.md`, если она ещё формируется;
+- перенести её в `governance/Governance_Backlog.md`, если это достаточно зрелое Governance-предложение;
+- определить более поздний этап, если вопрос относится к нему;
+- отклонить действие, если оно находится вне области.
 
-Then return to the current stage.
+После этого исполнитель возвращается к текущему этапу.
+
+## Запрет на самостоятельную оптимизацию маршрута
+
+Исполнитель **не имеет права самостоятельно сокращать, переставлять, пропускать или заменять маршрут выполнения**, определённый актуальным состоянием репозитория и действующим процессом, даже если другой маршрут кажется ему более коротким, эффективным или логичным.
+
+Собственное рассуждение исполнителя может использоваться для анализа и проверки, но **не является основанием для изменения установленного маршрута**.
+
+Изменение маршрута допустимо только в том случае, если оно прямо разрешено актуальным решением, правилом или иным авторитетным артефактом Governance.
+
+### Пример последовательности
+
+Пусть текущий процесс определяет последовательность:
+
+`A → B → C → D → E`
+
+где каждая буква обозначает отдельное допустимое действие или этап.
+
+Если исполнитель находится на `B`, он должен перейти к `C`.
+
+Даже если исполнитель считает, что можно сразу перейти к `E`, правильный маршрут остаётся:
+
+`A → B → C → D → E`
+
+и переход `B → E` запрещён, пока репозиторий явно не разрешит изменение маршрута.
+
+Если исполнитель обнаружил, что `C` больше не нужен, это не даёт ему права самостоятельно выполнить `B → D`. Сначала необходимо пройти предусмотренный процесс изменения маршрута, после чего новый маршрут должен быть явно зафиксирован в авторитетном артефакте репозитория.
 
 ## Repository-only context rule
 
-Process Check must use repository artifacts as its authoritative context. The executor must not use chat memory, an assumed previous state, or an obsolete local copy as a substitute for missing repository evidence.
+Process Check должен использовать артефакты репозитория как авторитетный источник контекста. Исполнитель не должен использовать память чата, предполагаемое предыдущее состояние или устаревшую локальную копию как замену отсутствующему доказательству из репозитория.
 
-The minimum recovery route is:
+Минимальный маршрут восстановления:
 
-`CANON.md → Foundation Core → PROJECT_STATUS.md → Process Check → Governance Backlog → Ideas/Discussion → latest Release Review / Decision Records`
+`CANON.md → Foundation Core → PROJECT_STATUS.md → Process Check → Governance Backlog → Ideas/Discussion → последний Release Review / Decision Records`
 
-If a required repository source is unavailable, the executor must report the limitation and must not silently reconstruct the missing state from memory.
+Если необходимый источник репозитория недоступен, исполнитель обязан сообщить об ограничении и не должен молча восстанавливать отсутствующее состояние из памяти.
 
-## Source-of-truth boundary
+## Граница Source of Truth
 
-Process Check is an operational rule. It does not itself create Foundation principles or approve Governance decisions.
+Process Check является операционным правилом. Он сам по себе не создаёт фундаментальных принципов Foundation и не утверждает Governance-решения.
 
-The rule may route work into Governance, but Governance decisions still require the normal review and decision process.
+Правило может направлять работу в Governance, но решения Governance по-прежнему требуют обычного процесса рассмотрения и принятия решения.
 
-## Practical example
+## Практический пример
 
-If the current stage is `ER-2` and its goal is terminology audit, a proposal to design a new architectural entity registry is outside the current goal. Process Check therefore routes the proposal to the appropriate Governance/Ideas record and returns execution to `ER-2`.
+Если текущий этап — `ER-2`, а его цель — аудит терминологии, предложение спроектировать новый реестр архитектурных сущностей выходит за рамки текущей цели. Process Check направляет предложение в соответствующий Governance/Ideas record и возвращает исполнение к `ER-2`.
 
-## Origin
+## Происхождение
 
-This rule was developed and tested during Release Review v1.0. The review demonstrated that constraining the **next step before generation** is more effective than relying only on post-generation validation.
+Это правило было разработано и проверено во время Release Review v1.0. Проверка показала, что ограничение **следующего шага до генерации ответа** эффективнее, чем полагаться только на проверку уже созданного ответа.
 
-The initial rule was intentionally kept as a working execution practice. After the repository/context preservation work, it is now recorded here so that the execution rule survives changes of model, session, tool, or executor.
+Первоначально правило намеренно оставалось рабочей практикой исполнения. После работы по сохранению контекста и состояния репозитория оно было записано здесь, чтобы правило исполнения сохранялось при смене модели, сессии, инструментов или исполнителя.
 
-## Verification status
+## Статус проверки
 
-The rule is now recorded in the repository. It must be exercised against the repository-only context before the next integrity audit is considered valid.
+Правило зафиксировано в репозитории. Оно должно быть проверено на repository-only контексте до того, как следующий integrity audit будет признан валидным.
