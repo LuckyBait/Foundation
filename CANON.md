@@ -26,8 +26,26 @@
 3. MANIFEST.md
 4. UNIVERSAL_COLLABORATION_METHODOLOGY.md
 5. DOCUMENTATION_LIFECYCLE.md
-6. governance/Governance_Backlog.md — текущее состояние Governance System
-7. governance/PROJECT_STATUS.md — снимок текущего состояния проекта (обновляется чаще всего)
+6. governance/PROJECT_STATUS.md — снимок текущего состояния проекта (обновляется чаще всего)
+7. governance/PROCESS_CHECK.md — обязательный execution-time control перед следующим проектным действием
+8. governance/Governance_Backlog.md — текущее состояние Governance System
+9. governance/IDEAS_AND_DISCUSSION.md — текущая стадия формирования и обсуждения идей
+10. Relevant Release Review and Decision Records — только те записи, которые относятся к текущей задаче
+
+После выполнения этого маршрута исполнитель обязан выполнить Process Check перед генерацией следующего проектного ответа или действия.
+
+## Источник истины
+
+При наличии доступа к репозиторию состояние `main` имеет приоритет над памятью
+диалога. Если обязательные данные недоступны, исполнитель не должен молча
+восстанавливать их из памяти; отсутствие данных должно быть явно зафиксировано
+и классифицировано через Process Check.
+
+## Граница Foundation / Governance
+
+Foundation v1.0 остаётся историческим каноническим baseline. Post-v1.0 Governance
+может развивать операционную систему, но не должна молча переписывать baseline
+Foundation v1.0.
 
 ## Статус
 
