@@ -2,15 +2,17 @@
 
 ## Статус
 
-**Selected Next Governance Review:** GS-00A
+**SUPERSEDED BY FINAL RECORD**
 
 ## Purpose
 
-Этот durable record фиксирует не решение по существу GS-00A, а только доказательную причину выбора GS-00A как следующего Governance Review согласно принятому протоколу GS-00E.
+Этот durable record фиксировал доказательную причину выбора GS-00A как следующего Governance Review согласно принятому протоколу GS-00E.
+
+После завершения Governance Review GS-00A и появления принятого Final Record этот Selection Record больше не является текущим описанием очередности.
 
 Foundation v1.0 не изменяется.
 
-## Candidate set
+## Historical candidate set
 
 На момент Process Check среди ожидающих Governance Reviews были рассмотрены как минимум:
 
@@ -18,74 +20,33 @@ Foundation v1.0 не изменяется.
 - GS-00B — Operational patterns from downstream project practice
 - другие deferred/observation items, включая GS-00X, GS-00Y, GS-00Z и GS-005.
 
-## Process stage
+## Historical process stage
 
-Текущий этап: **post-v1.0 Governance / Governance execution consolidation**.
+Текущий на момент выбора этап: **post-v1.0 Governance / Governance execution consolidation**.
 
-Цель текущего действия: определить следующий допустимый Governance Review без субъективной оптимизации маршрута.
+Цель действия состояла в определении следующего допустимого Governance Review без субъективной оптимизации маршрута.
 
-## A — Process admissibility
+## Selection result
 
-GS-00A соответствует текущему этапу и цели.
+GS-00A был выбран как следующий Governance Review потому, что:
 
-Он относится непосредственно к integrity процесса Repository Study и к контролю полноты repository-only context.
+1. он соответствовал текущему этапу;
+2. не имел невыполненной blocking dependency;
+3. был непосредственно подтверждён durable evidence о реальном process defect;
+4. выбор не требовал субъективного предпочтения или искусственного dependency.
 
-GS-00B также допустим, но относится к downstream practice и сравнительному анализу operational artifacts.
+## Final state
 
-GS-00X, GS-005 и связанные items имеют отдельные подтверждённые условия рассмотрения и не получают преимущества только по идентификатору.
+Governance Review GS-00A впоследствии был завершён и принят.
 
-**Результат A:** GS-00A допустим.
+Authoritative decision record:
 
-## B — Blocking dependencies
+governance/Governance_Review_GS-00A_Final_Record.md
 
-По текущему `governance/GOVERNANCE_REVIEW_DEPENDENCY_MAP.md` между GS-00A и GS-00B не установлена подтверждённая зависимость.
+Текущий статус GS-00A: **ACCEPTED**.
 
-GS-00A не имеет выявленной невыполненной blocking dependency.
+## Reconciliation note
 
-**Результат B:** GS-00A не исключается.
-
-## C — Evidence-backed necessity
-
-GS-00A непосредственно возник из подтверждённого дефекта Repository Study: исполнитель ранее объявил repository context изученным до чтения всего заявленного scope.
-
-Этот дефект непосредственно связан с действующим Process Check и с repository-only context rule. Он не является абстрактной будущей идеей: для него уже существует durable evidence в `governance/Repository_Study_Read_Set_v0.1.md` и отдельная запись GS-00A в Governance Backlog.
-
-GS-00B также имеет evidence basis, но представляет собой downstream observation о потенциальных Decision Records и Technical Debt Register и требует сначала проверить наличие существующих эквивалентов.
-
-**Результат C:** GS-00A имеет более непосредственную evidence-backed necessity для текущего governance/process gap.
-
-## D — Explicit governance dependency / downstream impact
-
-Подтверждённой зависимости, согласно которой решение GS-00A является обязательной предпосылкой GS-00B или другого допустимого Review, не установлено.
-
-Поэтому D не используется как искусственное основание выбора.
-
-**Результат D:** дополнительного dependency-based различия не установлено.
-
-## E — Deterministic tie-break
-
-E не применяется.
-
-Причина выбора уже определяется критерием C: GS-00A непосредственно закрывает подтверждённый текущий repository-study/process gap.
-
-## Selected Review
-
-**GS-00A — Контроль полноты Repository Study**
-
-## Reason
-
-GS-00A выбран как следующий Governance Review потому, что:
-
-1. он допустим на текущем этапе;
-2. у него нет невыполненной blocking dependency;
-3. он непосредственно подтверждён текущим durable evidence о реальном process defect;
-4. выбор не требует субъективного предпочтения или искусственного dependency;
-5. решение по GS-00A ещё не принято — этот record фиксирует только очередность рассмотрения.
-
-## Next allowed action
-
-Следующее действие — провести **Governance Review GS-00A** по существу.
-
-До завершения этого Review не следует самостоятельно переходить к реализации GS-00A или к следующему Governance item.
+Этот документ сохраняется как историческое evidence выбора Review, но больше не должен интерпретироваться как утверждение о том, что GS-00A ожидает рассмотрения.
 
 **End of Record.**
