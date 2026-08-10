@@ -2,41 +2,53 @@
 
 ## Статус
 
-**UNRESOLVED — State Conflict**
+**RESOLVED**
 
 ## Основание
 
-Process Check для Issue #5 подтвердил, что первым по приоритету является конфликт состояния GS-00A.
+Process Check для Issue #5 определил конфликт состояния GS-00A как первоочередной integrity problem.
 
-Однако проверка актуального `main` показывает, что существующий durable record `governance/Governance_Review_GS-00A_Final_Record.md` уже содержит решение **ACCEPTED** и устанавливает, что GS-00A по существу завершён, а требуется только Process clarification.
+Последующая проверка истории `main` установила временную последовательность authoritative records:
 
-Одновременно:
+1. `governance/Governance_Backlog.md` — исходное состояние Observation / Requires Governance Consideration.
+2. `governance/Governance_Review_Selection_GS-00A.md` — выбор GS-00A как следующего Review, commit `66ada3ae69b16b86453505bc489e41043dfead71`, 2026-08-09T21:36:27Z.
+3. `governance/Governance_Review_GS-00A_Final_Record.md` — последующее принятие решения по GS-00A, commit `9950b55436c3a7b31c947ef23afb6341e557b293`, 2026-08-09T21:38:10Z.
 
-- `governance/Governance_Backlog.md` продолжает классифицировать GS-00A как `Observation / Requires Governance Consideration` и `Не рассмотрено`;
-- `governance/Governance_Review_Selection_GS-00A.md` продолжает указывать GS-00A как `Selected Next Governance Review` и говорит, что решение по GS-00A ещё не принято.
+Таким образом, Final Record был создан после Selection Record и является последующим durable решением по существу GS-00A.
 
-## Process Check result
+## Resolved state
 
-Повторно проводить содержательный Governance Review GS-00A сейчас **нельзя**, поскольку это означало бы игнорирование существующего durable Final Record.
+Авторитетным текущим состоянием GS-00A считается:
 
-Также нельзя самостоятельно выбрать Final Record, Selection Record или Backlog как единственную Истину.
+**ACCEPTED — существующий контроль подтверждён; требуется только явная интеграция в execution protocol.**
 
-Следовательно, текущая допустимая задача — **reconcile state of existing GS-00A records** в рамках действующего Governance process.
+`Governance_Review_GS-00A_Final_Record.md` сохраняется как decision record.
 
-## Confirmed facts
+`Governance_Review_Selection_GS-00A.md` переведён в исторический статус `SUPERSEDED BY FINAL RECORD`.
 
-1. Существует Final Record GS-00A со статусом `ACCEPTED`.
-2. Существует Selection Record GS-00A со статусом `Selected Next Governance Review`.
-3. Backlog продолжает считать GS-00A нерассмотренным.
-4. Dependency Map не устанавливает между GS-00A и GS-00B отдельного порядка.
-5. Process Check запрещает исполнителю самостоятельно менять установленный маршрут.
+`Governance_Backlog.md` синхронизирован с принятым решением и больше не классифицирует GS-00A как нерассмотренное observation.
 
-## Ограничение
+## What was not changed
 
-Этот record не выбирает одну из конфликтующих записей как Истину и не изменяет ни один из существующих GS-00A records.
+- Foundation v1.0 baseline не изменялся.
+- Само принятое решение GS-00A не изменялось.
+- Новый архитектурный механизм не создавался.
+- GS-00B не рассматривался по существу в рамках reconciliation.
 
-## Следующее допустимое действие
+## Evidence boundary
 
-Провести установленную процедурой **reconciliation существующего состояния GS-00A**, определить авторитетный статус на основании действующих правил Governance и только после этого обновить зависимые durable records согласованным способом.
+Вывод о precedence основан не на предположении о типе документа, а на проверенной временной последовательности commits в `main` и содержании самого Final Record.
 
-До разрешения этого конфликта не следует начинать новый содержательный Governance Review GS-00A и не следует переходить к GS-00B на основании субъективного выбора.
+## Result
+
+Конфликт состояния GS-00A устранён. Текущие durable records согласованы:
+
+`Backlog → Accepted`
+
+`Selection → Historical / Superseded`
+
+`Final Record → Accepted / Current Decision`
+
+Следующее Governance действие должно определяться новым Process Check на уже согласованном состоянии репозитория.
+
+**End of Record.**
