@@ -213,32 +213,32 @@ GS-00A
 GS-00A — Контроль полноты Repository Study
 
 Статус:
-Observation / Requires Governance Consideration
+Accepted / Implemented by Governance Review decision
 
 Источник:
 Repository Study Read Set v0.1
 
 Наблюдение:
 
-Во время текущего repository study исполнитель объявил контекст проекта изученным до того, как был прочитан весь заявленный корпус.
+Во время repository study исполнитель объявил контекст проекта изученным до того, как был прочитан весь заявленный корпус.
 
 Выявленная проблема:
 
 Канонический recovery route и полное изучение repository context являются разными операциями.
 
-Рабочее требование:
+Принятое решение:
 
-READ_COMPLETE может быть выставлен только при успешном чтении каждого файла заявленного scope.
+Governance Review GS-00A уже завершён и принят. Существующий контроль подтверждён; отдельный новый архитектурный механизм не требуется. Требуется только явная интеграция существующего Read Set / READ_COMPLETE контроля в execution protocol.
 
-Evidence:
+Durable record:
 
-governance/Repository_Study_Read_Set_v0.1.md
+governance/Governance_Review_GS-00A_Final_Record.md
 
-Статус решения:
+Следующий маршрут:
 
-Не рассмотрено.
+Repository Study → Declared Scope → Read Set → READ_COMPLETE → Process Check → Conclusions
 
-Требует отдельного Governance Review. Foundation v1.0 не изменяется.
+Foundation v1.0 не изменяется.
 
 ---------------------------------------------------------
 
