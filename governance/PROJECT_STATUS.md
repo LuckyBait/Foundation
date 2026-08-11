@@ -53,26 +53,27 @@ Process Check uses repository state as its authoritative context and must not si
 
 **Issue #7 — Execution Continuity Gap:** **COMPLETED** by repository-only continuity verification.
 
-**Parent chain:** Issue #5 (resolved) → Issue #6 (resolved) → Issue #7 (resolved).
+**Issue #8 — Governance Review Ordering Evidence Gap:** **ACTIVE**.
 
-**Verified result:** the existing durable continuity chain is sufficient for recovery across a session boundary:
+**Parent chain:** Issue #5 (resolved) → Issue #6 (resolved) → Issue #7 (resolved) → Issue #8 (active).
 
-`CANON.md → PROJECT_STATUS.md → PROCESS_CHECK.md → REPOSITORY_SOURCE_OF_TRUTH.md`
+**Issue #8 mandatory next action:** determine whether existing repository evidence can distinguish the currently admissible unresolved Governance Review candidates under GS-00E criteria A–D.
 
-A future executor can recover the active work state, constraints, mandatory next action, and completion condition from `main` without relying on conversation history.
+**Current candidates identified from the Governance Backlog:** GS-00B, GS-00Y, GS-00Z, plus deferred/proposed items whose dependencies must be checked before consideration.
 
-**Issue #7 resolution:** no new checkpoint mechanism is required. The existing Project State mechanism is the durable execution checkpoint and must be used consistently.
+**Current dependency evidence:** `governance/GOVERNANCE_REVIEW_DEPENDENCY_MAP.md` does not establish an ordering between the relevant unresolved candidates. It explicitly prohibits inventing dependencies or selecting by subjective preference, chat order, or convenience.
 
-## Current next-step gate
-
-**No next Work Item has been selected yet.** Before selecting one, run a fresh Process Check against this synchronized repository state. The result of that Process Check must determine the next admissible action.
-
-**Constraints:**
+**Current constraints:**
 
 - Do not create new files in `governance/` unless explicitly authorized by the active process.
 - Do not invent a new enforcement mechanism before testing the existing repository mechanism.
 - Do not use conversation memory as the continuity mechanism.
+- Do not invent artificial Governance dependencies.
 - Do not modify Foundation v1.0 without the required architectural process.
+
+**Issue #8 completion condition:** either establish an existing evidence-backed deterministic ordering, or explicitly record that no deterministic ordering can currently be established and follow the process-required next action without pretending that a priority exists.
+
+This section is the current execution checkpoint. It is part of the existing Project State mechanism; it is not a new Governance rule.
 
 ## Idea and discussion state
 
@@ -98,4 +99,4 @@ If this snapshot conflicts with a more authoritative Foundation rule or a newer 
 
 ## Last verified state
 
-This record was synchronized after Issue #7 repository-only continuity verification. No new Work Item is active until the required fresh Process Check is completed.
+This record was synchronized after Issue #7 repository-only continuity verification and selection of Issue #8 as the next evidence-ordering work item.
