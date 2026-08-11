@@ -27,6 +27,7 @@ Current Governance and operational records include:
 - `governance/PROCESS_CHECK.md`
 - `governance/REPOSITORY_SOURCE_OF_TRUTH.md`
 - `governance/Release_Review_v1.0_Final_Record.md`
+- `governance/GOVERNANCE_REVIEW_DEPENDENCY_MAP.md`
 
 `governance/` is the Governance layer. An accidental nested `governance/governance/` copy is not part of the architecture.
 
@@ -45,7 +46,7 @@ The review established a separation between:
 
 **Process Check:** implemented as a post-v1.0 operational execution-time control and integrated into the active `CANON.md` recovery route.
 
-The mechanism has been exercised against the current repository state. It requires the executor to determine the current stage, stage objective, relevance of the proposed next action, and appropriate classification before generating or executing the next project-related response or action.
+The mechanism requires the executor to determine the current stage, stage objective, relevance of the proposed next action, and appropriate classification before generating or executing the next project-related response or action.
 
 Process Check uses repository state as its authoritative context and must not silently substitute conversation memory when repository data is unavailable.
 
@@ -53,25 +54,25 @@ Process Check uses repository state as its authoritative context and must not si
 
 **Issue #7 — Execution Continuity Gap:** **COMPLETED** by repository-only continuity verification.
 
-**Issue #8 — Governance Review Ordering Evidence Gap:** **ACTIVE**.
+**Issue #8 — Governance Review Ordering Evidence Gap:** **COMPLETED** by repository-only GS-00E candidate selection.
 
-**Parent chain:** Issue #5 (resolved) → Issue #6 (resolved) → Issue #7 (resolved) → Issue #8 (active).
+**Active Governance Review:** **GS-00B — Operational patterns from downstream project practice**.
 
-**Issue #8 mandatory next action:** determine whether existing repository evidence can distinguish the currently admissible unresolved Governance Review candidates under GS-00E criteria A–D.
+**Parent chain:** Issue #5 (resolved) → Issue #6 (resolved) → Issue #7 (resolved) → Issue #8 (resolved) → GS-00B Review (active).
 
-**Current candidates identified from the Governance Backlog:** GS-00B, GS-00Y, GS-00Z, plus deferred/proposed items whose dependencies must be checked before consideration.
+**Selection basis:** Issue #8 applied GS-00E criteria A–D. GS-00B was selected because its durable repository evidence most directly identifies a concrete current operational/lifecycle gap and explicitly requires a Governance Review to determine whether Decision Records / ADR and Technical Debt Register equivalents already exist and whether additional artifacts are necessary without duplication. No tie-break was required.
 
-**Current dependency evidence:** `governance/GOVERNANCE_REVIEW_DEPENDENCY_MAP.md` does not establish an ordering between the relevant unresolved candidates. It explicitly prohibits inventing dependencies or selecting by subjective preference, chat order, or convenience.
+**Mandatory next action:** run a fresh Process Check from this repository state before beginning the substantive GS-00B Governance Review.
 
 **Current constraints:**
 
 - Do not create new files in `governance/` unless explicitly authorized by the active process.
-- Do not invent a new enforcement mechanism before testing the existing repository mechanism.
-- Do not use conversation memory as the continuity mechanism.
 - Do not invent artificial Governance dependencies.
+- Do not treat GS-00B selection as proof that GS-00B is intrinsically more important than GS-00Y or GS-00Z.
 - Do not modify Foundation v1.0 without the required architectural process.
+- Use repository-only evidence for the review.
 
-**Issue #8 completion condition:** either establish an existing evidence-backed deterministic ordering, or explicitly record that no deterministic ordering can currently be established and follow the process-required next action without pretending that a priority exists.
+**GS-00B completion condition:** determine, from existing repository evidence, whether equivalent Decision Record / ADR and Technical Debt Register mechanisms already exist; determine whether the observed downstream patterns represent a genuine current Governance/Lifecycle gap; and record the review decision and verification path durably before treating GS-00B as resolved.
 
 This section is the current execution checkpoint. It is part of the existing Project State mechanism; it is not a new Governance rule.
 
@@ -99,4 +100,4 @@ If this snapshot conflicts with a more authoritative Foundation rule or a newer 
 
 ## Last verified state
 
-This record was synchronized after Issue #7 repository-only continuity verification and selection of Issue #8 as the next evidence-ordering work item.
+This record was updated after completion of Issue #8 and evidence-backed selection of GS-00B as the next Governance Review.
