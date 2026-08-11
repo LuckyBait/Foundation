@@ -51,26 +51,32 @@ Process Check uses repository state as its authoritative context and must not si
 
 ## Active execution checkpoint
 
-**Active work item:** GitHub Issue #7 — `Execution Continuity Gap: Process Check result must survive the next step/session`.
+**Issue #7 — Execution Continuity Gap:** **COMPLETED** by repository-only continuity verification.
 
-**Parent chain:** Issue #5 (resolved) → Issue #6 (resolved) → Issue #7 (active).
+**Parent chain:** Issue #5 (resolved) → Issue #6 (resolved) → Issue #7 (resolved).
 
-**Current mandatory next action:** verify whether the existing repository state mechanism can persist the result of Process Check as a mandatory input to the next execution step and survive a session boundary.
+**Verified result:** the existing durable continuity chain is sufficient for recovery across a session boundary:
 
-**Current constraints:**
+`CANON.md → PROJECT_STATUS.md → PROCESS_CHECK.md → REPOSITORY_SOURCE_OF_TRUTH.md`
+
+A future executor can recover the active work state, constraints, mandatory next action, and completion condition from `main` without relying on conversation history.
+
+**Issue #7 resolution:** no new checkpoint mechanism is required. The existing Project State mechanism is the durable execution checkpoint and must be used consistently.
+
+## Current next-step gate
+
+**No next Work Item has been selected yet.** Before selecting one, run a fresh Process Check against this synchronized repository state. The result of that Process Check must determine the next admissible action.
+
+**Constraints:**
 
 - Do not create new files in `governance/` unless explicitly authorized by the active process.
 - Do not invent a new enforcement mechanism before testing the existing repository mechanism.
 - Do not use conversation memory as the continuity mechanism.
 - Do not modify Foundation v1.0 without the required architectural process.
 
-**Completion condition for Issue #7:** a future executor must be able to recover from `main` using the active `CANON.md` route and determine the mandatory next action without relying on conversation history.
-
-This section is the current execution checkpoint. It is part of the existing Project State mechanism; it is not a new Governance rule.
-
 ## Idea and discussion state
 
-The project now preserves the idea/discussion stage in `governance/IDEAS_AND_DISCUSSION.md`.
+The project preserves the idea/discussion stage in `governance/IDEAS_AND_DISCUSSION.md`.
 
 The durable lifecycle is:
 
@@ -92,4 +98,4 @@ If this snapshot conflicts with a more authoritative Foundation rule or a newer 
 
 ## Last verified state
 
-This record was updated during Post-Release Consolidation after integration and verification of the Process Check route.
+This record was synchronized after Issue #7 repository-only continuity verification. No new Work Item is active until the required fresh Process Check is completed.
