@@ -1,0 +1,43 @@
+# .github/workflows/governance-check.yml
+#
+# Помещается в репозиторий по пути .github/workflows/governance-check.yml
+#
+# Смысл: этот workflow сам по себе ничего не блокирует. Блокировку
+# обеспечивает branch protection (см. ниже), который требует, чтобы
+# именно этот check был зелёным перед merge в main.
+#
+# Настройка branch protection (один раз, вручную в GitHub UI):
+# Settings -> Branches -> Branch protection rules -> main ->
+#   [x] Require status checks to pass before merging
+#       -> выбрать "governance-lint" (имя job ниже)
+#   [x] Require branches to be up to date before merging
+#   [x] Do not allow bypassing the above settings (даже для admin, опционально)
+#
+# После этого merge в main физически невозможен, пока governance_lint.py не
+# завершится с кодом 0 — независимо от того, что "решила" модель или человек в диалоге.
+
+name: governance-check
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  governance-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (full history for diff)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run governance_lint.py
+        run: |
+          python3 governance_lint.py --repo-root . --base-ref origin/${{ github.base_ref || 'main' }}
