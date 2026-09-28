@@ -28,6 +28,7 @@ Current Governance and operational records include:
 - `governance/REPOSITORY_SOURCE_OF_TRUTH.md`
 - `governance/Release_Review_v1.0_Final_Record.md`
 - `governance/GOVERNANCE_REVIEW_DEPENDENCY_MAP.md`
+- `governance/PROJECT_BOOTSTRAP.md` (v0) — как подключить проект к Foundation
 
 `governance/` is the Governance layer. An accidental nested `governance/governance/` copy is not part of the architecture.
 
