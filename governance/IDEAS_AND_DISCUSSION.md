@@ -128,3 +128,49 @@ governance/PILOT_PLAN.md; записи от 2026-08-21 и 2026-08-28.
 
 **Next step:** На следующем фрагменте знания из Dispatching проверить,
 что подключение не требует выяснений и занимает один шаг.
+
+
+### 2026-09-28 — Изменения, введённые вне маршрута Foundation: что откачено, что пробное
+
+**Наблюдение:** В ходе работы над подключением проекта Dispatching ряд
+изменений внесён вне установленного маршрута (Idea → Discussion →
+Observation → Governance item → Review → Decision → Implementation →
+Verification) и без Process Check.
+
+**Откачено (git revert):**
+- CANON.md (коммит 8f3bd3f): формулировки Определений и Законов,
+  написанные владельцем, были переписаны другими словами; в раздел
+  «Обязательные инструкции» добавлен пункт 8, хотя запись от 2026-08-21
+  прямо фиксирует идею как нерешённую, а не как правило. Восстановлен
+  текст владельца.
+- README.md (коммит f90aa9c): расхождение README и состояния
+  governance/ — открытый конфликт (Issue #5, приоритет второй после
+  GS-00A). Разрешается через Governance Review, а не правкой вне
+  маршрута.
+
+**Остаётся со статусом «пробное, введено вне маршрута, не является
+правилом Foundation»:** governance_lint.py;
+.github/workflows/governance-check.yml; governance/HARNESS_DESIGN.md;
+governance/PILOT_PLAN.md; governance/PROJECT_BOOTSTRAP.md (v0);
+FOUNDATION.md и строка в README проекта Dispatching (привязаны к
+коммиту ca70115). Принятие или отклонение решается по результатам
+слепого теста (governance/reports/Memory_Problem_and_Path_to_Repository_External_Memory.md,
+раздел 9) и через ревью GS-00B (практика downstream-проектов).
+
+**Наблюдение по владельцу:** аксиома 2 требует единственного владельца
+у каждой архитектурной идеи. Поле «Владелец» есть только у GS-001…004
+(значение «Governance System»); у девяти записей (GS-005, GS-00X,
+GS-00Y, GS-00Z, GS-00A, GS-00B, GS-00C, GS-00D, GS-00E) его нет.
+Фиксируется как наблюдение; Backlog не изменяется, так как во время
+аудита архитектура заморожена. Проверка governance_lint.py, опирающаяся
+на это поле, пробная и результата не определяет.
+
+**Related record:** governance/PROJECT_STATUS.md (запись о
+разрешении); governance/Process_Check_Issue_5_Record.md;
+EXECUTION_ANALYSIS_PROCESS_CHECK_CONTINUITY.md; записи от 2026-08-21,
+2026-08-28 и 2026-09-28 (уточнение).
+
+**Next step:** Провести слепой тест независимого исполнителя (без
+истории, только адрес репозитория) на Foundation и на Dispatching;
+результат записать как evidence независимо от исхода. Решение по
+пробным изменениям принимается после теста.
