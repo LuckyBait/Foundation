@@ -73,6 +73,8 @@ Process Check uses repository state as its authoritative context and must not si
 - Do not modify Foundation v1.0 without the required architectural process.
 - Use repository-only evidence for the review.
 
+**Recorded authorization (2026-09-28):** the repository owner explicitly authorized the creation of `governance/HARNESS_DESIGN.md` (added 2026-08-21), `governance/PILOT_PLAN.md` (added 2026-08-21) and `governance/PROJECT_BOOTSTRAP.md` (added 2026-09-28). The authorization was given in the working chat and is recorded here after the fact. It covers only these three files and does not lift the constraint on new files in `governance/`.
+
 **GS-00B completion condition:** determine, from existing repository evidence, whether equivalent Decision Record / ADR and Technical Debt Register mechanisms already exist; determine whether the observed downstream patterns represent a genuine current Governance/Lifecycle gap; and record the review decision and verification path durably before treating GS-00B as resolved.
 
 This section is the current execution checkpoint. It is part of the existing Project State mechanism; it is not a new Governance rule.
