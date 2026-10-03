@@ -89,6 +89,9 @@ Proposed
 
 Вернуться после завершения Release Review.
 
+Владелец:
+LuckyBait
+
 ---------------------------------------------------------
 
 GS-00X — Knowledge Runtime (рабочее название)
@@ -120,6 +123,9 @@ Release Review v1.0 → ER-2
 Решение:
 
 Не рассматривать в рамках текущего аудита.
+
+Владелец:
+LuckyBait
 
 ---------------------------------------------------------
 
@@ -158,6 +164,9 @@ Foundation может являться не только системой опи
 Не рассмотрено.
 
 Требует отдельного Governance Review после завершения Release Review.
+
+Владелец:
+LuckyBait
 
 ---------------------------------------------------------
 
@@ -207,6 +216,9 @@ Governance Review;
 
 Требует отдельного Governance Review после завершения Release Review.
 
+Владелец:
+LuckyBait
+
 ---------------------------------------------------------
 
 GS-00A
@@ -239,6 +251,9 @@ governance/Governance_Review_GS-00A_Final_Record.md
 Repository Study → Declared Scope → Read Set → READ_COMPLETE → Process Check → Conclusions
 
 Foundation v1.0 не изменяется.
+
+Владелец:
+LuckyBait
 
 ---------------------------------------------------------
 
@@ -279,6 +294,9 @@ governance/Governance_Review_GS-00B_Final_Record.md
 
 Принято и зафиксировано durable repository record: governance/Governance_Review_GS-00B_Final_Record.md. Foundation v1.0 не изменяется.
 
+Владелец:
+LuckyBait
+
 ---------------------------------------------------------
 
 GS-00C
@@ -300,6 +318,9 @@ governance/Repository_Architecture_Review_Final_Record.md
 
 Foundation v1.0 не изменяется.
 
+Владелец:
+LuckyBait
+
 ---------------------------------------------------------
 
 GS-00D
@@ -307,6 +328,9 @@ GS-00D — Formal Governance Review Ordering / Prioritization
 
 Статус:
 Accepted / Implemented by Governance Review decision
+
+Источник:
+Process Check и анализ действующих Governance records после принятия GS-00C.
 
 Решение:
 
@@ -330,6 +354,9 @@ Durable records:
 governance/Governance_Review_GS-00D_Final_Record.md
 
 governance/GOVERNANCE_REVIEW_DEPENDENCY_MAP.md
+
+Владелец:
+LuckyBait
 
 ---------------------------------------------------------
 
@@ -369,5 +396,8 @@ governance/Governance_Review_GS-00E_Final_Record.md
 Статус решения:
 
 Принято и зафиксировано durable repository record.
+
+Владелец:
+LuckyBait
 
 ---------------------------------------------------------
