@@ -30,7 +30,7 @@ GS-002
 Project Status
 
 Статус:
-Implemented — реализовано как `governance/PROJECT_STATUS.md` (используется с 2026-08-09)
+Approved / Pending Implementation
 
 Основание:
 Система должна хранить текущее состояние проекта,
