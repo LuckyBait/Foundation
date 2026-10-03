@@ -30,7 +30,7 @@ GS-002
 Project Status
 
 Статус:
-Approved / Pending Implementation
+Implemented — реализовано как governance/PROJECT_STATUS.md (используется с 2026-08-09)
 
 Основание:
 Система должна хранить текущее состояние проекта,
@@ -246,7 +246,7 @@ GS-00B
 GS-00B — Operational patterns from downstream project practice
 
 Статус:
-Observation / Requires Governance Consideration
+Reviewed — gap confirmed in formalization, mechanism undetermined
 
 Источник:
 Repository Study и сравнительный анализ документационной системы downstream-проекта HVAC Cost Calculator.
@@ -270,6 +270,10 @@ Repository Study и сравнительный анализ документац
 Следующее допустимое действие:
 
 Отдельный Governance Review должен определить наличие эквивалентов, необходимость новых operational artifacts и отсутствие дублирования источников истины.
+
+Durable record:
+
+governance/Governance_Review_GS-00B_Final_Record.md
 
 Статус решения:
 

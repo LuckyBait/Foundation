@@ -57,9 +57,9 @@ Process Check uses repository state as its authoritative context and must not si
 
 **Issue #8 — Governance Review Ordering Evidence Gap:** **COMPLETED** by repository-only GS-00E candidate selection.
 
-**Active Governance Review:** **GS-00B — Operational patterns from downstream project practice**.
+**Active Governance Review:** нет активного ревью. **GS-00B — Operational patterns from downstream project practice** — **COMPLETED** (2026-10-03), durable record: `governance/Governance_Review_GS-00B_Final_Record.md`.
 
-**Parent chain:** Issue #5 (resolved) → Issue #6 (resolved) → Issue #7 (resolved) → Issue #8 (resolved) → GS-00B Review (active).
+**Parent chain:** Issue #5 (resolved) → Issue #6 (resolved) → Issue #7 (resolved) → Issue #8 (resolved) → GS-00B Review (completed).
 
 **Selection basis:** Issue #8 applied GS-00E criteria A–D. GS-00B was selected because its durable repository evidence most directly identifies a concrete current operational/lifecycle gap and explicitly requires a Governance Review to determine whether Decision Records / ADR and Technical Debt Register equivalents already exist and whether additional artifacts are necessary without duplication. No tie-break was required.
 
