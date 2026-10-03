@@ -277,9 +277,7 @@ governance/Governance_Review_GS-00B_Final_Record.md
 
 Статус решения:
 
-Не рассмотрено.
-
-Требует отдельного Governance Review. Foundation v1.0 не изменяется.
+Принято и зафиксировано durable repository record: governance/Governance_Review_GS-00B_Final_Record.md. Foundation v1.0 не изменяется.
 
 ---------------------------------------------------------
 
