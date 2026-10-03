@@ -39,5 +39,16 @@ jobs:
           python-version: "3.11"
 
       - name: Run governance_lint.py
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PUSH_BEFORE: ${{ github.event.before }}
+          PR_BASE_REF: ${{ github.base_ref }}
         run: |
-          python3 governance_lint.py --repo-root . --base-ref origin/${{ github.base_ref || 'main' }}
+          # push: сравнение с состоянием main до пуша (github.event.before);
+          # pull_request: сравнение с базовой веткой PR.
+          if [ "$EVENT_NAME" = "push" ]; then
+            BASE="$PUSH_BEFORE"
+          else
+            BASE="origin/${PR_BASE_REF:-main}"
+          fi
+          python3 governance_lint.py --repo-root . --base-ref "$BASE"

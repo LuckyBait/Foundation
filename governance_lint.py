@@ -22,12 +22,6 @@ REQUIRED_BACKLOG_FIELDS = ["Статус", "Владелец"]
 # Основание/Источник — синонимичные поля, достаточно одного из них
 ALT_FIELD_GROUPS = [["Основание", "Источник"]]
 
-IMPLEMENTED_STATUSES = [
-    "Approved / Pending Implementation",
-    "Accepted / Implemented",
-    "Implemented",
-]
-
 DURABLE_RECORD_MARKERS = ["Durable record", "governance/"]
 
 
@@ -83,7 +77,7 @@ def check_backlog_entries(repo_root: Path) -> list[str]:
 
 def check_project_status_sync(repo_root: Path, base_ref: str) -> list[str]:
     """Если PR меняет что-то внутри governance/, PROJECT_STATUS.md обязан
-    быть в числе изменённых файлов. Правило GS-002 / GS-010 в механическом
+    быть в числе изменённых файлов. Правило GS-002 в механическом
     виде: state должен обновляться вместе с изменением governance."""
     errors = []
     try:
